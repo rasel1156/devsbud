@@ -33,11 +33,11 @@
   HT Predefined Variables
 --------------------------------------*/
 var $window = $(window),
-    $document = $(document),
-    $body = $('body'),
-    $fullScreen = $('.fullscreen-banner') || $('.section-fullscreen'),
-    $halfScreen = $('.halfscreen-banner'),
-    searchActive = false;
+  $document = $(document),
+  $body = $('body'),
+  $fullScreen = $('.fullscreen-banner') || $('.section-fullscreen'),
+  $halfScreen = $('.halfscreen-banner'),
+  searchActive = false;
 
 //Check if function exists
 $.fn.exists = function () {
@@ -49,7 +49,7 @@ $.fn.exists = function () {
   HT PreLoader
 --------------------------------------*/
 function preloader() {
-   $('#ht-preloader').delay(0).fadeOut();
+  $('#ht-preloader').delay(0).fadeOut();
 };
 
 
@@ -57,28 +57,28 @@ function preloader() {
   HT FullScreen
 --------------------------------------*/
 function fullScreen() {
-    if ($fullScreen.exists()) {
-        $fullScreen.each(function () {
-        var $elem = $(this),
+  if ($fullScreen.exists()) {
+    $fullScreen.each(function () {
+      var $elem = $(this),
         elemHeight = $window.height();
-        if($window.width() < 768 ) $elem.css('height', elemHeight/ 1);
-        else $elem.css('height', elemHeight);
-        });
-        }
-        if ($halfScreen.exists()) {
-        $halfScreen.each(function () {
-        var $elem = $(this),
+      if ($window.width() < 768) $elem.css('height', elemHeight / 1);
+      else $elem.css('height', elemHeight);
+    });
+  }
+  if ($halfScreen.exists()) {
+    $halfScreen.each(function () {
+      var $elem = $(this),
         elemHeight = $window.height();
-        $elem.css('height', elemHeight / 2);
-        });
-    }
+      $elem.css('height', elemHeight / 2);
+    });
+  }
 };
 
 
 /*------------------------------------
   HT menu
 --------------------------------------*/
-function menu() {  
+function menu() {
   $('#main-menu').smartmenus();
 };
 
@@ -86,10 +86,10 @@ function menu() {
 /*------------------------------------
   HT Counter
 --------------------------------------*/
-function counter() {  
+function counter() {
   $('.count-number').countTo({
     refreshInterval: 2
-  });   
+  });
 };
 
 
@@ -97,39 +97,49 @@ function counter() {
   HT Owl Carousel
 --------------------------------------*/
 function owlcarousel() {
-$('.owl-carousel').each( function() {
-  var $carousel = $(this);
-  $carousel.owlCarousel({
-      items : $carousel.data("items"),
-      slideBy : $carousel.data("slideby"),
-      center : $carousel.data("center"),
-      loop : true,
-      margin : $carousel.data("margin"),
-      dots : $carousel.data("dots"),
-      nav : $carousel.data("nav"),      
-      autoplay : $carousel.data("autoplay"),
-      autoplayTimeout : $carousel.data("autoplay-timeout"),
-      navText : [ '<span class="fas fa-long-arrow-alt-left"><span>', '<span class="fas fa-long-arrow-alt-right"></span>' ],
+  $('.owl-carousel').each(function () {
+    var $carousel = $(this);
+    $carousel.owlCarousel({
+      items: $carousel.data("items"),
+      slideBy: $carousel.data("slideby"),
+      center: $carousel.data("center"),
+      loop: true,
+      margin: $carousel.data("margin"),
+      dots: $carousel.data("dots"),
+      nav: $carousel.data("nav"),
+      autoplay: $carousel.data("autoplay"),
+      autoplayTimeout: $carousel.data("autoplay-timeout"),
+      navText: ['<span class="fas fa-long-arrow-alt-left"><span>', '<span class="fas fa-long-arrow-alt-right"></span>'],
       responsive: {
-        0:{items: $carousel.data('xs-items') ? $carousel.data('xs-items') : 1},
-        576:{items: $carousel.data('sm-items')},
-        768:{items: $carousel.data('md-items')},
-        1024:{items: $carousel.data('lg-items')},
-        1200:{items: $carousel.data("items")}
+        0: {
+          items: $carousel.data('xs-items') ? $carousel.data('xs-items') : 1
+        },
+        576: {
+          items: $carousel.data('sm-items')
+        },
+        768: {
+          items: $carousel.data('md-items')
+        },
+        1024: {
+          items: $carousel.data('lg-items')
+        },
+        1200: {
+          items: $carousel.data("items")
+        }
       },
+    });
   });
-});
 };
 
 
 /*------------------------------------
   HT Testimonial Carousel
---------------------------------------*/  
+--------------------------------------*/
 function testimonialcarousel() {
-    $('.testimonial-carousel').on('slide.bs.carousel', function (evt) {
-      $('.testimonial-carousel .controls li.active').removeClass('active');
-      $('.testimonial-carousel .controls li:eq('+$(evt.relatedTarget).index()+')').addClass('active');
-    })
+  $('.testimonial-carousel').on('slide.bs.carousel', function (evt) {
+    $('.testimonial-carousel .controls li.active').removeClass('active');
+    $('.testimonial-carousel .controls li:eq(' + $(evt.relatedTarget).index() + ')').addClass('active');
+  })
 };
 
 
@@ -137,7 +147,7 @@ function testimonialcarousel() {
   HT Magnific Popup
 --------------------------------------*/
 function magnificpopup() {
-$('.popup-gallery').magnificPopup({
+  $('.popup-gallery').magnificPopup({
     delegate: 'a.popup-img',
     type: 'image',
     tLoading: 'Loading image #%curr%...',
@@ -145,27 +155,27 @@ $('.popup-gallery').magnificPopup({
     gallery: {
       enabled: true,
       navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+      preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
     },
     image: {
       tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-      titleSrc: function(item) {
+      titleSrc: function (item) {
         return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
       }
     }
   });
-if ($(".popup-youtube, .popup-vimeo, .popup-gmaps").exists()) {
-     $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-          disableOn: 700,
-          type: 'iframe',
-          mainClass: 'mfp-fade',
-          removalDelay: 160,
-          preloader: false,
-          fixedContentPos: false
+  if ($(".popup-youtube, .popup-vimeo, .popup-gmaps").exists()) {
+    $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+      disableOn: 700,
+      type: 'iframe',
+      mainClass: 'mfp-fade',
+      removalDelay: 160,
+      preloader: false,
+      fixedContentPos: false
     });
   }
 
-};     
+};
 
 /*------------------------------------
   HT Scroll to top
@@ -173,7 +183,7 @@ if ($(".popup-youtube, .popup-vimeo, .popup-gmaps").exists()) {
 function scrolltop() {
   var pxShow = 300,
     goTopButton = $(".scroll-top")
-    // Show or hide the button
+  // Show or hide the button
   if ($(window).scrollTop() >= pxShow) goTopButton.addClass('scroll-visible');
   $(window).on('scroll', function () {
     if ($(window).scrollTop() >= pxShow) {
@@ -191,14 +201,14 @@ function scrolltop() {
 };
 
 
- /*------------------------------------
+/*------------------------------------
   HT Banner Section
 --------------------------------------*/
 function headerheight() {
-  $('.fullscreen-banner .align-center, .nav-arrows span').each(function(){
-    var headerHeight=$('.header').height();
+  $('.fullscreen-banner .align-center, .nav-arrows span').each(function () {
+    var headerHeight = $('.header').height();
     // headerHeight+=15; // maybe add an offset too?
-    $(this).css('padding-top',headerHeight+'px');
+    $(this).css('padding-top', headerHeight + 'px');
   });
 };
 
@@ -209,9 +219,9 @@ function headerheight() {
 function fxheader() {
   $(window).on('scroll', function () {
     if ($(window).scrollTop() >= 100) {
-      $('#header-wrap').addClass('fixed-header');
+      $('#site-header').addClass('fixed-header');
     } else {
-      $('#header-wrap').removeClass('fixed-header');
+      $('#site-header').removeClass('fixed-header');
     }
   });
 };
@@ -221,94 +231,93 @@ function fxheader() {
   HT Text Color, Background Color And Image
 ---------------------------------------------*/
 function databgcolor() {
-    $('[data-bg-color]').each(function(index, el) {
-     $(el).css('background-color', $(el).data('bg-color'));  
-    });
-    $('[data-text-color]').each(function(index, el) {
-     $(el).css('color', $(el).data('text-color'));  
-    });
-    $('[data-bg-img]').each(function() {
-     $(this).css('background-image', 'url(' + $(this).data("bg-img") + ')');
-    });
+  $('[data-bg-color]').each(function (index, el) {
+    $(el).css('background-color', $(el).data('bg-color'));
+  });
+  $('[data-text-color]').each(function (index, el) {
+    $(el).css('color', $(el).data('text-color'));
+  });
+  $('[data-bg-img]').each(function () {
+    $(this).css('background-image', 'url(' + $(this).data("bg-img") + ')');
+  });
 };
 
 
 /*------------------------------------
   HT Accordian
 --------------------------------------*/
-function accordian() { 
-  $(".card").on("show.bs.collapse hide.bs.collapse", function(e) {
-    if (e.type=='show'){
+function accordian() {
+  $(".card").on("show.bs.collapse hide.bs.collapse", function (e) {
+    if (e.type == 'show') {
       $(this).addClass('active');
-    }else{
+    } else {
       $(this).removeClass('active');
     }
-  });  
-$('.accordion .card-header a').prepend('<span></span>');
+  });
+  $('.accordion .card-header a').prepend('<span></span>');
 };
 
 
 /*------------------------------------
   HT Contact Form
 --------------------------------------*/
-function contactform() { 
-    $('#contact-form').validator();
+function contactform() {
+  $('#contact-form').validator();
 
-    // when the form is submitted
-    $('#contact-form').on('submit', function (e) {
+  // when the form is submitted
+  $('#contact-form').on('submit', function (e) {
 
     // if the validator does not prevent form submit
     if (!e.isDefaultPrevented()) {
-        var url = "php/contact.php";
+      var url = "php/contact.php";
 
-        // POST values in the background the the script URL
-        $.ajax({
-            type: "POST",
-            url: url,
-            data: $(this).serialize(),
-            success: function (data)
-            {
-            // data = JSON object that contact.php returns
+      // POST values in the background the the script URL
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: $(this).serialize(),
+        success: function (data) {
+          // data = JSON object that contact.php returns
 
-            // we recieve the type of the message: success x danger and apply it to the 
-            var messageAlert = 'alert-' + data.type;
-            var messageText = data.message;
+          // we recieve the type of the message: success x danger and apply it to the 
+          var messageAlert = 'alert-' + data.type;
+          var messageText = data.message;
 
-            // let's compose Bootstrap alert box HTML
-            var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-            
-            // If we have messageAlert and messageText
-            if (messageAlert && messageText) {
-                // inject the alert to .messages div in our form
-                $('#contact-form').find('.messages').html(alertBox).show().delay(2000).fadeOut('slow');
-                // empty the form
-                $('#contact-form')[0].reset();
-            }
+          // let's compose Bootstrap alert box HTML
+          var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+
+          // If we have messageAlert and messageText
+          if (messageAlert && messageText) {
+            // inject the alert to .messages div in our form
+            $('#contact-form').find('.messages').html(alertBox).show().delay(2000).fadeOut('slow');
+            // empty the form
+            $('#contact-form')[0].reset();
           }
-        });
-        return false;
+        }
+      });
+      return false;
     }
- })    
+  })
 };
 
 
 /*------------------------------------
   HT ProgressBar
 --------------------------------------*/
-  function progressbar () {
-    var progressBar = $('.progress');
-    if(progressBar.length) {
-      progressBar.each(function () {
-        var Self = $(this);
-        Self.appear(function () {
-          var progressValue = Self.data('value');
+function progressbar() {
+  var progressBar = $('.progress');
+  if (progressBar.length) {
+    progressBar.each(function () {
+      var Self = $(this);
+      Self.appear(function () {
+        var progressValue = Self.data('value');
 
-          Self.find('.progress-bar').animate({
-            width:progressValue+'%'           
-          }, 1000);
-        });
-      })
-    }
+        Self.find('.progress-bar').animate({
+          width: progressValue + '%'
+        }, 1000);
+      });
+    })
+  }
 };
 
 
@@ -316,42 +325,33 @@ function contactform() {
   HT Search
 --------------------------------------*/
 function search() {
-  if($('.search-form').length)
-    {
-      var searchForm = $('.search-form');
-      var searchInput = $('.search-input');
-      var searchButton = $('.search-button');
+  if ($('.search-form').length) {
+    var searchForm = $('.search-form');
+    var searchInput = $('.search-input');
+    var searchButton = $('.search-button');
 
-      searchButton.on('click', function(event)
-      {
-        event.stopPropagation();
+    searchButton.on('click', function (event) {
+      event.stopPropagation();
 
-        if(!searchActive)
-        {
-          searchForm.addClass('active');
-          searchActive = true;
-          searchInput.focus();
+      if (!searchActive) {
+        searchForm.addClass('active');
+        searchActive = true;
+        searchInput.focus();
 
-          $(document).one('click', function closeForm(e)
-          {
-            if($(e.target).hasClass('search-input'))
-            {
-              $(document).one('click', closeForm);
-            }
-            else
-            {
-              searchForm.removeClass('active');
-              searchActive = false;
-            }
-          });
-        }
-        else
-        {
-          searchForm.removeClass('active');
-          searchActive = false;
-        }
-      }); 
-    }
+        $(document).one('click', function closeForm(e) {
+          if ($(e.target).hasClass('search-input')) {
+            $(document).one('click', closeForm);
+          } else {
+            searchForm.removeClass('active');
+            searchActive = false;
+          }
+        });
+      } else {
+        searchForm.removeClass('active');
+        searchActive = false;
+      }
+    });
+  }
 };
 
 
@@ -374,22 +374,22 @@ function countdown() {
   HT Wow Animation
 --------------------------------------*/
 function wowanimation() {
-    var wow = new WOW({
-        boxClass: 'wow',
-        animateClass: 'animated',
-        offset: 0,
-        mobile: false,
-        live: true
-    });
-    wow.init();
+  var wow = new WOW({
+    boxClass: 'wow',
+    animateClass: 'animated',
+    offset: 0,
+    mobile: false,
+    live: true
+  });
+  wow.init();
 }
 
 
 /*------------------------------------
   HT Window load and functions
 --------------------------------------*/
-$(document).ready(function() {
-    fullScreen(),
+$(document).ready(function () {
+  fullScreen(),
     menu(),
     owlcarousel(),
     counter(),
@@ -398,7 +398,7 @@ $(document).ready(function() {
     scrolltop(),
     headerheight(),
     fxheader(),
-    databgcolor(),  
+    databgcolor(),
     accordian(),
     contactform(),
     progressbar(),
@@ -407,14 +407,12 @@ $(document).ready(function() {
 });
 
 
-$window.resize(function() {
+$window.resize(function () {
   fullScreen();
 });
 
 
-$(window).on('load', function() {
-    preloader(),
+$(window).on('load', function () {
+  preloader(),
     wowanimation();
 });
-
-  
