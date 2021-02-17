@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/rasel1156/devsbud#readme",
   "dependencies": {
+    "animate.css": "^4.1.1",
     "bootstrap": "^4.6.0",
+    "magnific-popup": "^1.1.0",
     "owl.carousel": "^2.3.4"
   }
 }
