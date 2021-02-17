@@ -1,0 +1,29 @@
+{
+  "name": "devsbud",
+  "version": "1.0.0",
+  "description": "Devsbud npm ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rasel1156/devsbud.git"
+  },
+  "keywords": [
+    "devsbud",
+    "git",
+    "sass",
+    "npm"
+  ],
+  "author": "iqbal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rasel1156/devsbud/issues"
+  },
+  "homepage": "https://github.com/rasel1156/devsbud#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "owl.carousel": "^2.3.4"
+  }
+}
