@@ -1580,5 +1580,33 @@ iframe {
   opacity: 0.050;
 }
 
+
+
+// devsbud custom  style
+.featured-item.style-2:hover,
+.price-table:hover {
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2) !important;
+}
+
+a.icon-btn.mt-4 {
+  display: none;
+}
+
+.color-heading {
+  background: linear-gradient(45deg, #6c63fc, #fc6581);
+  background-clip: text i !important;
+  color: transparent;
+  -webkit-background-clip: text !important;
+  -moz-background-clip: text !important;
+  -o-background-clip: text !important;
+
+}
+
+.img-side img.img-center {
+  width: 100%;
+  height: auto;
+}
+
+
 // responsive css
-@import 'responsive'
+@import 'responsive';
