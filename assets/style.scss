@@ -1611,5 +1611,30 @@ a.icon-btn.mt-4 {
   background: linear-gradient(45deg, #6c63fc, #fc6581) !important;
 }
 
+.no-pad-top {
+  padding-top: 0px;
+}
+
+.btn {
+  &::before {
+    display: none;
+  }
+}
+
+.price-list {
+  margin-top: 15px;
+
+  @media only screen and (max-width: 767px) {
+    margin-top: 10px;
+  }
+}
+
+.testimonial.style-4 {
+  &::after {
+    display: none;
+  }
+
+}
+
 // responsive css
 @import 'responsive';
